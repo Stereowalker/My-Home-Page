@@ -1,0 +1,36 @@
+﻿* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+body {
+    color: #FF0000;
+    font-family: 'Book Antiqua', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color:rgb(220,220,255);
+}
+
+.assign1 {
+    border: solid 1px;
+    background-color: #0000FF;
+}
+
+/**Landing Page*/
+.nav {
+    background-color: #000000;
+    padding: 20px;
+}
+
+.nav > a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+/**Main Page*/
+.main {
+    text-align: center;
+    font-size: 40px;
+    padding-top: 40px;
+    font-weight: bolder;
+}

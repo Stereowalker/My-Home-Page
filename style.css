@@ -7,7 +7,7 @@
 body {
     color: #FF0000;
     font-family: 'Book Antiqua', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color:rgb(220,220,255);
+    background-color:rgb(240,240,255);
 }
 
 .assign1 {
@@ -17,8 +17,9 @@ body {
 
 /**Landing Page*/
 .nav {
-    background-color: #000000;
+    background-color: #000011;
     padding: 20px;
+    font-size: 25px;
 }
 
 .nav > a {

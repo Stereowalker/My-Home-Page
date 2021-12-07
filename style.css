@@ -38,9 +38,17 @@ nav > div {
     border-color: rgb(0, 0, 11);
     border-width: 0px 0px 10px 0px;
     border-style: solid;
+    transition-duration: 1s;
 }
 
 nav > div:hover {
+    background-color: rgb(1, 1, 33);
+    border-color: rgb(255, 255, 255);
+    border-width: 0px 0px 10px 0px;
+    border-style: solid;
+}
+
+.hover_list > a:hover {
     background-color: rgb(1, 1, 33);
     border-color: rgb(255, 255, 255);
     border-width: 0px 0px 10px 0px;

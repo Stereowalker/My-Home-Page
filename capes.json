@@ -1,45 +1,53 @@
 {
 	"supporters": [
 		{
-			"name": "Stereowalker",
-			"uuid": "4da67eb9-7966-4aa3-b2f6-7ee90bf606d2",
+			"uuid": "4da67eb9-7966-4aa3-b2f6-7ee90bf606d2", "name": "Stereowalker",
 			"type": "self",
 			"cape": "stereowalker"
 		},
 		{
-			"name": "Jumper",
-			"uuid": "986e2557-0d63-37ec-acd8-20f952a01923",
-			"type": "personal",
-			"cape": "minecon2011"
-		},
-		{
-			"name": "CodeHexIO",
-			"uuid": "c5751ce1-d50e-4d47-ca12-0e1ea1c75542",
+			"uuid": "c5751ce1-d50e-4d47-ca12-0e1ea1c75542", "name": "CodeHexIO",
 			"type": "personal",
 			"cape": "custom3"
 		},
 		{
-			"name": "Milk",
-			"uuid": "6569abe0-e92b-4aaf-ba4a-800b346c32f3",
-			"type": "obsidian",
-			"cape": "minecon2016"
+			"uuid": "986e2557-0d63-37ec-acd8-20f952a01923", "name": "Jumper",
+			"type": "personal",
+			"cape": "minecon2011"
 		},
 		{
-			"name": "Angel",
-			"uuid": "e2401a9b-d035-3821-b275-03f8b4339b02",
+			"uuid": "e2401a9b-d035-3821-b275-03f8b4339b02", "name": "Angel",
 			"type": "personal",
 			"cape": "minecon2013"
 		},
 		{
-			"name": "Mimi",
-			"uuid": "74649178-0bc8-3661-8503-68ca5190d4bb",
+			"uuid": "74649178-0bc8-3661-8503-68ca5190d4bb", "name": "Mimi",
 			"type": "personal",
 			"cape": "custom2"
 		},
 		{
-			"name": "Mr_Jakob99",
-			"uuid": "74649178-0bc8-3661-8503-68ca5190d4bb",
+			"uuid": "6569abe0-e92b-4aaf-ba4a-800b346c32f3", "name": "Milk",
 			"type": "obsidian",
+			"cape": "minecon2016"
+		},
+		{
+			"uuid": "00000000-0000-0000-0000-000000000000", "name": "Eddiee Ethian Quiriz Loaiza",
+			"type": "obsidian",
+			"cape": "custom2"
+		},
+		{
+			"uuid": "00000000-0000-0000-0000-000000000000", "name": "Mr_Jakob99",
+			"type": "diamond",
+			"cape": "custom2"
+		},
+		{
+			"uuid": "00000000-0000-0000-0000-000000000000", "name": "Kuechenbulle",
+			"type": "diamond",
+			"cape": "custom2"
+		},
+		{
+			"uuid": "00000000-0000-0000-0000-000000000000", "name": "Ryan Kinka",
+			"type": "diamond",
 			"cape": "custom2"
 		}
 	]

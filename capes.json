@@ -1,11 +1,32 @@
 {
 	"supporters": [
 		{
-			"uuid": "4da67eb9-7966-4aa3-b2f6-7ee90bf606d2", 
-			"name": "Stereowalker",
-			"type": "self", 
-			"discordId": 409434310941343744,
-			"cape": "minecon2011"
+			"uuid": "00000000-0000-0000-0000-000000000000", 
+			"name": "Eddiee Ethian Quiriz Loaiza",
+			"type": "obsidian", 
+			"discordId": 841716654228766730,
+			"cape": "custom2"
+		},
+		{
+			"uuid": "00000000-0000-0000-0000-000000000000", 
+			"name": "Mr_Jakob99",
+			"type": "diamond", 
+			"discordId": 0,
+			"cape": "custom2"
+		},
+		{
+			"uuid": "00000000-0000-0000-0000-000000000000", 
+			"name": "Kuechenbulle",
+			"type": "diamond", 
+			"discordId": 0,
+			"cape": "custom2"
+		},
+		{
+			"uuid": "00000000-0000-0000-0000-000000000000", 
+			"name": "Ryan Kinka",
+			"type": "diamond", 
+			"discordId": 0,
+			"cape": "custom2"
 		},
 		{
 			"uuid": "c5751ce1-d50e-4d47-ca12-0e1ea1c75542", 
@@ -43,32 +64,11 @@
 			"cape": "minecon2016"
 		},
 		{
-			"uuid": "00000000-0000-0000-0000-000000000000", 
-			"name": "Eddiee Ethian Quiriz Loaiza",
-			"type": "obsidian", 
-			"discordId": 841716654228766730,
-			"cape": "custom2"
-		},
-		{
-			"uuid": "00000000-0000-0000-0000-000000000000", 
-			"name": "Mr_Jakob99",
-			"type": "diamond", 
-			"discordId": 0,
-			"cape": "custom2"
-		},
-		{
-			"uuid": "00000000-0000-0000-0000-000000000000", 
-			"name": "Kuechenbulle",
-			"type": "diamond", 
-			"discordId": 0,
-			"cape": "custom2"
-		},
-		{
-			"uuid": "00000000-0000-0000-0000-000000000000", 
-			"name": "Ryan Kinka",
-			"type": "diamond", 
-			"discordId": 0,
-			"cape": "custom2"
+			"uuid": "4da67eb9-7966-4aa3-b2f6-7ee90bf606d2", 
+			"name": "Stereowalker",
+			"type": "self", 
+			"discordId": 409434310941343744,
+			"cape": "minecon2015"
 		}
 	]
 }

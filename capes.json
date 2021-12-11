@@ -33,9 +33,9 @@
 			"cape": "custom2"
 		},
 		{
-			"uuid": "c5751ce1-d50e-4d47-ca12-0e1ea1c75542",
+			"uuid": "622c4f37-ef07-4061-9375-8467c4759d1b",
 			"name": "CodeHexIO",
-			"type": "personal",
+			"type": "self",
 			"discordId": 0,
 			"showCape": true,
 			"cape": "custom3"

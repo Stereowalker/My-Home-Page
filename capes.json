@@ -1,84 +1,84 @@
 {
 	"supporters": [
 		{
-			"uuid": "00000000-0000-0000-0000-000000000000",
+			"uuid": "00000000-0000-0000-0000-000000000000", 
 			"name": "Eddiee Ethian Quiriz Loaiza",
-			"type": "obsidian",
+			"type": "obsidian", 
 			"discordId": 841716654228766730,
 			"showCape": true,
 			"cape": "custom2"
 		},
 		{
-			"uuid": "00000000-0000-0000-0000-000000000000",
+			"uuid": "00000000-0000-0000-0000-000000000000", 
 			"name": "Mr_Jakob99",
-			"type": "diamond",
+			"type": "diamond", 
 			"discordId": 0,
 			"showCape": true,
 			"cape": "custom2"
 		},
 		{
-			"uuid": "00000000-0000-0000-0000-000000000000",
+			"uuid": "00000000-0000-0000-0000-000000000000", 
 			"name": "Kuechenbulle",
-			"type": "diamond",
+			"type": "diamond", 
 			"discordId": 0,
 			"showCape": true,
 			"cape": "custom2"
 		},
 		{
-			"uuid": "00000000-0000-0000-0000-000000000000",
+			"uuid": "00000000-0000-0000-0000-000000000000", 
 			"name": "Ryan Kinka",
-			"type": "diamond",
+			"type": "diamond", 
 			"discordId": 0,
 			"showCape": true,
 			"cape": "custom2"
 		},
 		{
-			"uuid": "622c4f37-ef07-4061-9375-8467c4759d1b",
-			"name": "CodeHexIO",
-			"type": "self",
-			"discordId": 0,
-			"showCape": true,
-			"cape": "custom3"
-		},
-		{
-			"uuid": "986e2557-0d63-37ec-acd8-20f952a01923",
+			"uuid": "986e2557-0d63-37ec-acd8-20f952a01923", 
 			"name": "Jumper",
-			"type": "personal",
+			"type": "personal", 
 			"discordId": 0,
 			"showCape": true,
 			"cape": "minecon2011"
 		},
 		{
-			"uuid": "e2401a9b-d035-3821-b275-03f8b4339b02",
+			"uuid": "e2401a9b-d035-3821-b275-03f8b4339b02", 
 			"name": "Angel",
-			"type": "personal",
+			"type": "personal", 
 			"discordId": 0,
 			"showCape": true,
 			"cape": "minecon2013"
 		},
 		{
-			"uuid": "74649178-0bc8-3661-8503-68ca5190d4bb",
+			"uuid": "74649178-0bc8-3661-8503-68ca5190d4bb", 
 			"name": "Mimi",
-			"type": "personal",
+			"type": "personal", 
 			"discordId": 0,
 			"showCape": true,
 			"cape": "custom2"
 		},
 		{
-			"uuid": "6569abe0-e92b-4aaf-ba4a-800b346c32f3",
+			"uuid": "6569abe0-e92b-4aaf-ba4a-800b346c32f3", 
 			"name": "Sophia",
-			"type": "older",
+			"type": "older", 
 			"discordId": 0,
 			"showCape": true,
 			"cape": "minecon2016"
 		},
 		{
-			"uuid": "4da67eb9-7966-4aa3-b2f6-7ee90bf606d2",
+			"uuid": "622c4f37-ef07-4061-9375-8467c4759d1b", 
+			"name": "CodeHexIO",
+			"type": "self", 
+			"discordId": 0,
+			"showCape": true,
+			"cape": "custom3"
+		},
+		{
+			"uuid": "4da67eb9-7966-4aa3-b2f6-7ee90bf606d2", 
 			"name": "Stereowalker",
-			"type": "self",
+			"type": "self", 
 			"discordId": 409434310941343744,
 			"showCape": true,
-			"cape": "pancape"
+			"cape": "minecon2015"
 		}
 	]
 }

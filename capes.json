@@ -77,7 +77,7 @@
 			"name": "Stereowalker",
 			"type": "self", 
 			"discordId": 409434310941343744,
-			"showCape": false,
+			"showCape": true,
 			"cape": "custom1"
 		}
 	]

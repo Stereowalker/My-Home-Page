@@ -1,41 +1,49 @@
 {
 	"supporters": [
 		{
-			"uuid": "5bfdb948-7b66-476a-aefe-d45e4778fb2d", 
+			"uuid": "5bfdb948-7b66-476a-aefe-d45e4778fb2d",
 			"name": "Ryan Kinka",
-			"type": "obsidian", 
+			"type": "obsidian",
 			"discordId": 156560112431923200,
 			"showCape": true,
 			"cape": "custom2"
 		},
 		{
-			"uuid": "00000000-0000-0000-0000-000000000000", 
+			"uuid": "00000000-0000-0000-0000-000000000000",
+			"name": "Chris Ward",
+			"type": "obsidian",
+			"discordId": 283508664537579522,
+			"showCape": true,
+			"cape": "custom2"
+		},
+		{
+			"uuid": "00000000-0000-0000-0000-000000000000",
 			"name": "Mr_Jakob99",
-			"type": "diamond", 
+			"type": "diamond",
 			"discordId": 0,
 			"showCape": true,
 			"cape": "custom2"
 		},
 		{
-			"uuid": "00000000-0000-0000-0000-000000000000", 
+			"uuid": "00000000-0000-0000-0000-000000000000",
 			"name": "Pelletstove",
-			"type": "diamond", 
+			"type": "diamond",
 			"discordId": 0,
 			"showCape": true,
 			"cape": "custom2"
 		},
 		{
-			"uuid": "622c4f37-ef07-4061-9375-8467c4759d1b", 
+			"uuid": "622c4f37-ef07-4061-9375-8467c4759d1b",
 			"name": "CodeHexIO",
-			"type": "self", 
+			"type": "self",
 			"discordId": 0,
 			"showCape": true,
 			"cape": "custom3"
 		},
 		{
-			"uuid": "4da67eb9-7966-4aa3-b2f6-7ee90bf606d2", 
+			"uuid": "4da67eb9-7966-4aa3-b2f6-7ee90bf606d2",
 			"name": "Stereowalker",
-			"type": "self", 
+			"type": "self",
 			"discordId": 409434310941343744,
 			"showCape": true,
 			"cape": "stereowalker"

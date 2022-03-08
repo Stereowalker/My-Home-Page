@@ -18,6 +18,14 @@
 		},
 		{
 			"uuid": "00000000-0000-0000-0000-000000000000",
+			"name": "Lexi Lee-Ranson",
+			"type": "obsidian",
+			"discordId": 0,
+			"showCape": true,
+			"cape": "custom2"
+		},
+		{
+			"uuid": "00000000-0000-0000-0000-000000000000",
 			"name": "Mr_Jakob99",
 			"type": "diamond",
 			"discordId": 0,

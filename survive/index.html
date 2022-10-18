@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <title>Survive (Minecraft Mod)</title>
     <link rel="shortcut icon" href="../Stereowalker.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../libraries/highlightjs/styles/felipec.min.css">
     <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
@@ -17,7 +18,7 @@
                 <a href="../index.html">Home</a>
             </div>
             <div id="mods">
-                <a>Mods</a>
+                <a>My Mods</a>
                 <div class="hover_list" id="mods_hover">
                     <a class="active">Survive</a>
                     <a href="combat.html">C.O.M.B.A.T</a>
@@ -36,57 +37,217 @@
     </header>
     <section class="main">
         <article>
-            <h1>SUMMARY</h1>
-            Survive is a mod that adds various features to enhance the difficulty and realism of Minecraft! It adds such features as Thirst, Stamina, and Temperature!
+            <h1>WHAT IS THIS PAGE FOR?</h1>
+            This intent of this page is to tack on information that can't be incuded in the main CurseForge page or the ingame guide book
+            <br></br>
 
-
-
-            <h1>MECHANICS</h1>
-
-            Thirst - You now have a thirst bar positioned above your hunger bar. You must keep it replenished by drinking fluids such as water. The bar acts much like hunger; if you fail to keep it full, you will begin to die of thirst. You can get quickly get water by crouching and right-clicking a water source block or by drinking a bottle of water. However, if you want to avoid the Thirst effect purify the water through smelting or drink a potion. The Thirst effect causes your thirst bar to drop faster, much like Hunger for the hunger bar.
-
-
-
-            Temperature - Your body temperature will be influenced by how hot or how cold your current biome and the blocks around you are. Vanilla armors will increase your temperature as well as how fast you heat up. Wearing wool armor will increase your resistance to cold temperatures, and using stiffened honey armor will improve your resistance to heat. If you get too cold or too hot you will get hypothermia or hyperthermia respectively, which act like poison by killing you until you reach half a heart. By default, your temperature is displayed as a tint on your Hotbar but can be changed to a bar meter atop your screen or number value in the config file.
-
-
-
-            Sleep - You will now require sleep to function properly. If you refuse to sleep for days at a time, your body will start to shut down. This will lead to debuffs influencing your movement speed and other functions, as well as restricting your vision gradually. You can drink caffeinated/sugary drinks to grant yourself the Energized effect, which reverses tiredness and gives various effects.
-
-
-
-            Stamina - Certain actions you perform in your world will now lower your new stamina bar upon performing. Your stamina can be replenished by standing still, walking rather than running, or laying in a bed. Sleeping fills the meter completely. When you run out of stamina, the meter will turn red and you will see three red stamina slots. This is your reserve stamina, which is a clear indicator that you will die if you work your body much more. Once your reserve stamina runs out, you will swiftly proceed to die of exhaustion.
-
-
-
-            <h1>CONFIG</h1>
-
-            Each and every mechanic can be disabled in the config file. Some can additionally be altered to change how much certain aspects of the game impact Survive's mechanics.
-
-            [As of version 3.1.0 some configurations are bugged or broken but will get fixed in future updates. This may apply to past versions as well.]
-
-
+            <h1>WHERE CAN I DOWNLOAD THE MOD?</h1>
+            <a href="https://www.curseforge.com/minecraft/mc-mods/survive">Here</a>
+            <br></br>
 
             <h1>DATA PACKS</h1>
-
-            Items that modify thirst when consumed can be added via a data pack. If you want to add the steak item, in your data pack create a new file, minecraft/survive_drinks/items/steak.json, and paste this into it
-
-
-
-
-
-            edit the values to your liking. This also works for modded items, (item namespace)/survive_drinks/items/(item id).json
-
-
-
-            This also works for potions, but rather than putting it in survive_drinks/items, you put it in survive_drinks/potions
-
-
-
-            If there is a certain mod you want it's drinks, armor, or blocks to work with this one you can download data packs that other users have submitted. Note that those packs are managed by those users and not me
+            <span>
+                <p>This mod gets a lot of its operational data from datapacks. Before we start the tutorial, there are some things we need to cover. Firstly, 
+                    <code class="language-plaintext"> [mod_id]:[item_name]</code> 
+                refers to the item you want to edit. when using the 
+                    <code class="language-plaintext"> /give</code> 
+                command, the first words after 
+                    <code class="language-plaintext"> :</code> 
+                refer to the 
+                    <code class="language-plaintext"> [mod_id]</code> 
+                while the parts after it refer to the 
+                    <code class="language-plaintext"> [item_name]</code>. 
+                Secondly, I will not be teaching you hoe to make a datapack, you'll have to learn that elsewhere. I'll just continue under the asumption that you know the bare minimum of how they work<p>
+                <p>Now that we've covered that, here's what you can modify</P>
+            </span>
+            <br>
+            <ul>
+                <li>
+                    <h2>Armor data</h2>
+                    <p><tab1>There are 2 things that can be modified here, one thing being more complicated than the other and that is weight and temperature.</p>
+                    <p>Here is a sample of the file. It's files are stored in <code>data/[mod_id]/survive_modifiers/armors/[armor_name].json</code></p>
+                    
+                    <div class="parent_cb"><pre><code class="json child_cb dynamic_file" id="unionlib"></code></pre></div>
+                
+                    <p><tab1>I'll start with the less complicated one. The second field, <code class="json">"weight_modifier": 4.37</code> gives you control of the percieved weight of the armor peice. 
+                The unit of measure is kg so if you naitively use pounds or anything else, convert your value to kiligrams and input it here</p>
+                <p>For the complicated part, we have temperature. This gives you control of how that armor peice will interact with the players temperature. Here, 
+                you'll provide a list of conditions and the mod checks them and applies whatever is there in ascending order. In the above example, I provided 2 conditions 
+                <code class="json">"condition": "survive:on_fire"</code>
+                and
+                <code class="json">"condition": "survive:default"</code>
+                . The first one applies it's temperature value when the player is on fire making the player a lot hotter while the second will always set the players temperature relatively hot.
+                If I had used the second one first, the first one will never trigger as the second one is always active. As for what these conditions are, 
+                <table>
+                    <tr>
+                        <th>Condition</th>
+                        <th>Description</th>
+                        <th>Parameters</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="parent_cb">
+                                <pre>
+                                    <code class="json child_cb">"condition": "survive:default",
+"temperature": 1.0
+</code>
+                                </pre>
+                            </div>
+                        </td>
+                        <td>The default condition. It will always apply it's temperature. Best used as the last condition</td>
+                        <td>
+                            <p><code class="json">"temperature": 1.0</code>. The temperature to be applied to the player</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="parent_cb">
+                                <pre>
+                                    <code class="json child_cb">"condition": "survive:underwater",
+"temperature": 1.0,
+"depth": 2,
+"operation": "water_>=",
+</code>
+                                </pre>
+                            </div>
+                        </td>
+                        <td>This checks how deep you are in water or any fluids tagged<p><code class="language-plaintext"> minecraft:water</code></td>
+                        <td>
+                            <p><code class="json">"temperature": 1.0</code>. The temperature to be applied to the player</p>
+                            <p><code class="json">"depth": 2</code>. How deep in blocks underwater the player has to be in order to apply this condition</p>
+                            <p><code class="json">"operation": "y_<"</code>. The operation to be performed on the depth. The operations are:</p>
+                            <p><tab1><code class="language-plaintext"> y_=</code> is your y coord equal to depth? </p>
+                            <p><tab1><code class="language-plaintext"> y_>=</code> is your y coord greater than or equal to depth? </p>
+                            <p><tab1><code class="language-plaintext"> y_<=</code> is your y coord less than or equal to depth? </p>
+                            <p><tab1><code class="language-plaintext"> y_></code> is your y coord greater than to depth? </p>
+                            <p><tab1><code class="language-plaintext"> y_<</code> is your y coord less than to depth? </p>
+                            <p><tab1><code class="language-plaintext"> water_=</code> is your distance underwater equal to depth? </p>
+                            <p><tab1><code class="language-plaintext"> water_>=</code> is your distance underwater greater than or equal to depth? </p>
+                            <p><tab1><code class="language-plaintext"> water_<=</code> is your distance underwater less than or equal to depth? </p>
+                            <p><tab1><code class="language-plaintext"> water_></code> is your distance underwater greater than to depth? </p>
+                            <p><tab1><code class="language-plaintext"> water_<</code> is your distance underwater less than to depth? </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="parent_cb">
+                                <pre>
+                                    <code class="json child_cb">"condition": "survive:on_fire",
+"temperature": 1.0,
+"fireTimer": 2,
+"operation": ">=",
+</code>
+                                </pre>
+                            </div>
+                        </td>
+                        <td>This checks if you are on fire and how long you will be on fire for</td>
+                        <td>
+                            <p><code class="json">"temperature": 1.0</code>. The temperature to be applied to the player</p>
+                            <p><code class="json">"fireTimer": 2</code>. The amount of ticks remaining before the fire goes out</p>
+                            <p><code class="json">"operation": "y_<"</code>. The operation to be performed on the fireTimer. The operations are:</p>
+                            <p><tab1><code class="language-plaintext"> =</code> is your remaining fire time equal to fireTimer? </p>
+                            <p><tab1><code class="language-plaintext"> >=</code> is your remaining fire time greater than or equal to fireTimer? </p>
+                            <p><tab1><code class="language-plaintext"> <=</code> is your remaining fire time less than or equal to fireTimer? </p>
+                            <p><tab1><code class="language-plaintext"> ></code> is your remaining fire time greater than to fireTimer? </p>
+                            <p><tab1><code class="language-plaintext"> <</code> is your remaining fire time less than to fireTimer? </p>
+                        </td>
+                    </tr>
+                </table>
+                </p>
+                </li>
+                <li>- Biome data
+                <div class="parent_cb"><pre><code class="json child_cb">{
+    "temperature_modifiers": [
+        {
+            "condition": "survive:on_fire",
+    		"temperature": 4.05,
+    		"fireTimer": 1,
+    		"operation": ">"
+    	},
+    	{
+    	    "condition": "survive:default",
+    		"temperature": 2.7
+        }
+    ],
+    "weight_modifier": 4.37
+}
+</code></pre></div></li>
+                <li>- Block data
+                <div class="parent_cb"><pre><code class="json child_cb">{
+    "temperature_modifiers": [
+        {
+            "condition": "survive:on_fire",
+    		"temperature": 4.05,
+    		"fireTimer": 1,
+    		"operation": ">"
+    	},
+    	{
+    	    "condition": "survive:default",
+    		"temperature": 2.7
+        }
+    ],
+    "weight_modifier": 4.37
+}
+</code></pre></div></li>
+                <li>- Consumable data
+                <div class="parent_cb"><pre><code class="json child_cb">{
+    "temperature_modifiers": [
+        {
+            "condition": "survive:on_fire",
+    		"temperature": 4.05,
+    		"fireTimer": 1,
+    		"operation": ">"
+    	},
+    	{
+    	    "condition": "survive:default",
+    		"temperature": 2.7
+        }
+    ],
+    "weight_modifier": 4.37
+}
+</code></pre></div></li>
+                <li>- Entity data
+                <div class="parent_cb"><pre><code class="json child_cb">{
+    "temperature_modifiers": [
+        {
+            "condition": "survive:on_fire",
+    		"temperature": 4.05,
+    		"fireTimer": 1,
+    		"operation": ">"
+    	},
+    	{
+    	    "condition": "survive:default",
+    		"temperature": 2.7
+        }
+    ],
+    "weight_modifier": 4.37
+}
+</code></pre></div></li>
+                <li>- Fluid data
+                <div class="parent_cb"><pre><code class="json child_cb">{
+    "temperature_modifiers": [
+        {
+            "condition": "survive:on_fire",
+    		"temperature": 4.05,
+    		"fireTimer": 1,
+    		"operation": ">"
+    	},
+    	{
+    	    "condition": "survive:default",
+    		"temperature": 2.7
+        }
+    ],
+    "weight_modifier": 4.37
+}
+</code></pre></div></li>
+            </ul>
         </article>
     </section>
     <footer>
     </footer>
+    <script src="../replace_contents.js"></script>
+    <script src="../resize_code_block.js"></script>
+    <script src="../libraries/highlightjs/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </body>
 </html>

@@ -13,6 +13,6 @@ function populatePre(contents, url) {
 
 var codes = document.getElementsByClassName("dynamic_file");
 for (var i = 0; i < codes.length; i++) {
-    //populatePre(codes.item(i), 'https://stereowalker.github.io/My-Home-Page/files_to_load/');
-    populatePre(codes.item(i), 'http://myhomepage/files_to_load/');
+    populatePre(codes.item(i), 'https://stereowalker.github.io/My-Home-Page/files_to_load/');
+    //populatePre(codes.item(i), 'http://myhomepage/files_to_load/');
 }

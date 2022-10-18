@@ -7,7 +7,7 @@
 body {
     color: rgb(50, 50, 50);
     font-family: 'Baskerville Old Face';
-    background-color:rgb(235,235,245);
+    background-color:rgb(225,225,240);
 }
 
 body h1 {
@@ -24,6 +24,10 @@ body h2 {
 
 table, th, td {
   border:1px solid black;
+}
+
+.t_cb {
+  display: table-cell;
 }
 
 .active {
@@ -123,6 +127,13 @@ html > body > .parent_cb {
     justify-content: center;
     border-radius: 6px;
     margin: 10px
+}
+.t_cb > div > pre {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+    flex-direction: column;
 }
 code {
     height: inherit;

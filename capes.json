@@ -9,6 +9,30 @@
 			"cape": "custom2"
 		},
 		{
+			"uuid": "5bfdb948-7b66-476a-aefe-d45e4778fb2d",
+			"name": "Ryan Kinka",
+			"type": "older",
+			"discordId": 156560112431923200,
+			"showCape": true,
+			"cape": "custom2"
+		},
+		{
+			"uuid": "00000000-0000-0000-0000-000000000000",
+			"name": "Chris Ward",
+			"type": "older",
+			"discordId": 283508664537579522,
+			"showCape": true,
+			"cape": "custom2"
+		},
+		{
+			"uuid": "00000000-0000-0000-0000-000000000000",
+			"name": "Lexi Lee-Ranson",
+			"type": "older",
+			"discordId": 0,
+			"showCape": true,
+			"cape": "custom2"
+		},
+		{
 			"uuid": "00000000-0000-0000-0000-000000000000",
 			"name": "Pelletstove",
 			"type": "diamond",

@@ -1,10 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\libraries",
+    "\\files_to_load",
+    "\\files_to_load\\conditions",
     "\\libraries\\highlightjs",
     "\\survive",
     "\\update_files"
   ],
+  "SelectedNode": "\\update_files\\survive.json",
   "PreviewInSolutionExplorer": false
 }

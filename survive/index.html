@@ -49,17 +49,29 @@
 
             <h1>DATA PACKS</h1>
             <span>
-                <p>This mod gets a lot of its operational data from datapacks. Before we start the tutorial, there are some things we need to cover. Firstly, 
+                <p>
+                    This mod gets a lot of its operational data from datapacks. Before we start the tutorial, there are some things we need to cover. 
+                </p>
+                <p>
+                    <tab1>1), 
                     <code class="language-plaintext"> [mod_id]:[item_name]</code> 
-                refers to the item you want to edit. when using the 
+                    refers to the item you want to edit. When using the 
                     <code class="language-plaintext"> /give</code> 
-                command, the first words after 
+                    command, the first words after 
                     <code class="language-plaintext"> :</code> 
-                refer to the 
+                    refer to the 
                     <code class="language-plaintext"> [mod_id]</code> 
-                while the parts after it refer to the 
+                    while the parts after it refer to the 
                     <code class="language-plaintext"> [item_name]</code>. 
-                Secondly, I will not be teaching you hoe to make a datapack, you'll have to learn that elsewhere. I'll just continue under the asumption that you know the bare minimum of how they work<p>
+                </p>
+                <p>
+                    <tab1>2), All files will be stored in 
+                    <code class="plaintext">data/[mod_id]/survive_modifiers/...</code>
+                    . Keep that in mind when arranging your files as the mod won't read your file if you don't put it in the correct location
+                </p>
+                <p>
+                    <tab1>3), I will not be teaching you how to make a datapack, you'll have to learn that elsewhere. I'll just continue under the asumption that you know the bare minimum of how they work.
+                </p>
                 <p>Now that we've covered that, here's what you can modify</P>
             </span>
             <br>
@@ -67,7 +79,7 @@
                 <li>
                     <h2>Armor data</h2>
                     <p><tab1>There are 2 things that can be modified here, one thing being more complicated than the other and that is weight and temperature.</p>
-                    <p>Here is a sample of the file. It's files are stored in <code class="plaintext">data/[mod_id]/survive_modifiers/armors/[item_name].json</code></p>
+                    <p>Here is a sample of the file. It's files are stored in <code class="plaintext">.../armors/[item_name].json</code></p>
                     
                     <div class="parent_cb"><pre><code class="json child_cb dynamic_file" id="armor_example.json"></code></pre></div>
                 

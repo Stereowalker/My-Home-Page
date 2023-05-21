@@ -48,8 +48,14 @@
             This intent of this page is to tack on information that can't be incuded in the main CurseForge page or the ingame guide book
             <br></br>
 
-            <h1>WHERE CAN I DOWNLOAD THE MOD?</h1>
-            <a href="https://www.curseforge.com/minecraft/mc-mods/survive">Here</a>
+            <h1>WHERE CAN I DOWNLOAD THIS MOD?</h1>
+            <p>
+                On
+                <a href="https://www.curseforge.com/minecraft/mc-mods/survive">CurseForge</a>
+                or on
+                <a href="https://modrinth.com/mod/survive">Modrinth</a>
+                . Anywhere else is illegally hosted and might contain viruses, so download with caution.
+            </p>
             <br></br>
 
             <h1>DATA PACKS</h1>
@@ -194,7 +200,114 @@
                 </li>
                 <li>
                     <h2>Biome data</h2>
+                    <p><tab1>This manipulates how the current and nearby biomes interacts with the player. There are 5 things that can be modified in your file</p>
+                    <p>Here is a sample of the file. It's files are stored in <code class="plaintext">.../armors/[item_name].json</code></p>
+
                     <div class="parent_cb"><pre><code class="json child_cb dynamic_file" id="biome_example.json"></code></pre></div>
+
+                    <p><tab1>I'll start with the less complicated one. The second field, <code class="json">"weight_modifier": 4.37</code> gives you control of the percieved weight of the armor peice.
+                    The unit of measure is kg so if you naitively use pounds or anything else, convert your value to kilograms and input it here</p>
+                    <p>For the complicated part, we have temperature. This gives you control of how that armor peice will interact with the players temperature. Here,
+                    you'll provide a list of conditions and the mod checks them and applies whatever is there in ascending order. In the above example, I provided 2 conditions
+                    <code class="json">"condition": "survive:on_fire"</code>
+                    and
+                    <code class="json">"condition": "survive:default"</code>
+                    . The first one applies it's temperature value when the player is on fire making the player a lot hotter while the second will always set the players temperature relatively hot.
+                    If I had used the second one first, the first one will never trigger as the second one is always active. As for what these conditions are,
+                    </p>
+                    <table>
+                        <tr>
+                            <th>Condition</th>
+                            <th>Description</th>
+                            <th>Parameters</th>
+                        </tr>
+                        <tr>
+                            <td class="t_cb">
+                                <div class="parent_cb">
+                                    <pre>
+                                        <code class="json child_cb dynamic_file" id="conditions/default.json"></code>
+                                    </pre>
+                                </div>
+                            </td>
+                            <td>The default condition. It will always apply it's temperature. Best used as the last condition</td>
+                            <td>
+                                <p><code class="json">"temperature": 1.1</code>. The temperature to be applied to the player</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="t_cb">
+                                <div class="parent_cb">
+                                    <pre>
+                                        <code class="json child_cb dynamic_file" id="conditions/underwater.json"></code>
+                                    </pre>
+                                </div>
+                            </td>
+                            <td>This checks how deep you are in water or any fluids tagged<p><code class="language-plaintext"> minecraft:water</code></td>
+                            <td>
+                                <p><code class="json">"temperature": 1.0</code>. The temperature to be applied to the player</p>
+                                <p><code class="json">"depth": 2</code>. How deep in blocks underwater the player has to be in order to apply this condition</p>
+                                <p><code class="json">"operation": "y_<"</code>. The operation to be performed on the depth. The operations are:</p>
+                                <p><tab1><code class="plaintext"> y_=</code> is your y coord equal to depth? </p>
+                                <p><tab1><code class="language-plaintext"> y_>=</code> is your y coord greater than or equal to depth? </p>
+                                <p><tab1><code class="language-plaintext"> y_<=</code> is your y coord less than or equal to depth? </p>
+                                <p><tab1><code class="language-plaintext"> y_></code> is your y coord greater than to depth? </p>
+                                <p><tab1><code class="language-plaintext"> y_<</code> is your y coord less than to depth? </p>
+                                <p><tab1><code class="language-plaintext"> water_=</code> is your distance underwater equal to depth? </p>
+                                <p><tab1><code class="language-plaintext"> water_>=</code> is your distance underwater greater than or equal to depth? </p>
+                                <p><tab1><code class="language-plaintext"> water_<=</code> is your distance underwater less than or equal to depth? </p>
+                                <p><tab1><code class="language-plaintext"> water_></code> is your distance underwater greater than to depth? </p>
+                                <p><tab1><code class="language-plaintext"> water_<</code> is your distance underwater less than to depth? </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="t_cb">
+                                <div class="parent_cb">
+                                    <pre>
+                                        <code class="json child_cb dynamic_file" id="conditions/on_fire.json"></code>
+                                    </pre>
+                                </div>
+                            </td>
+                            <td>This checks if you are on fire and how long you will be on fire for</td>
+                            <td>
+                                <p><code class="json">"temperature": 1.0</code>. The temperature to be applied to the player</p>
+                                <p><code class="json">"fireTimer": 2</code>. The amount of ticks remaining before the fire goes out</p>
+                                <p><code class="json">"operation": "y_<"</code>. The operation to be performed on the fireTimer. The operations are:</p>
+                                <p><tab1><code class="language-plaintext"> =</code> is your remaining fire time equal to fireTimer? </p>
+                                <p><tab1><code class="language-plaintext"> >=</code> is your remaining fire time greater than or equal to fireTimer? </p>
+                                <p><tab1><code class="language-plaintext"> <=</code> is your remaining fire time less than or equal to fireTimer? </p>
+                                <p><tab1><code class="language-plaintext"> ></code> is your remaining fire time greater than to fireTimer? </p>
+                                <p><tab1><code class="language-plaintext"> <</code> is your remaining fire time less than to fireTimer? </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="t_cb">
+                                <div class="parent_cb">
+                                    <pre>
+                                        <code class="json child_cb dynamic_file" id="conditions/biome.json"></code>
+                                    </pre>
+                                </div>
+                            </td>
+                            <td>This checks the biome you are currently in</td>
+                            <td>
+                                <p><code class="json">"temperature": 1.1</code>. The temperature to be applied to the player</p>
+                                <p><code class="json">"biome": "minecraft:plains"</code>. The biome the player has to be in for condition this to apply</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="t_cb">
+                                <div class="parent_cb">
+                                    <pre>
+                                        <code class="json child_cb dynamic_file" id="conditions/not_biome.json"></code>
+                                    </pre>
+                                </div>
+                            </td>
+                            <td>This checks to see if you are not in the specified biome</td>
+                            <td>
+                                <p><code class="json">"temperature": 1.1</code>. The temperature to be applied to the player</p>
+                                <p><code class="json">"biome": "minecraft:plains"</code>. The biome the player should not be in for condition this to apply</p>
+                            </td>
+                        </tr>
+                    </table>
                 </li>
                 <li>- Block data
                 <div class="parent_cb"><pre><code class="json child_cb">{

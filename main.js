@@ -4,7 +4,7 @@ clickMe.addEventListener('click', updateNow);
 clickMe.addEventListener('click', bulb);
 
 function updateNow() {
-    clickMe.innerHTML = "Hello Script2";
+    clickMe.innerHTML = "Hope you enjoy the contents of this site";
 }
 
 function bulbOff() {

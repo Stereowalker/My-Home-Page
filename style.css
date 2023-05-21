@@ -30,10 +30,6 @@ table, th, td {
   display: table-cell;
 }
 
-.active {
-    color: #555555
-}
-
 .assign1 {
     border: solid 1px;
     background-color: #0000FF;
@@ -62,21 +58,27 @@ nav > div:hover {
     border-style: solid;
 }
 
-.hover_list > a:hover {
-    background-color: rgb(1, 1, 33);
-    border-color: rgb(255, 255, 255);
-    border-width: 0px 0px 10px 0px;
-    border-style: solid;
-}
-
+/**Navigation Bar */
 nav > div > a {
     margin: 0 20px 0 20px;
     text-decoration: none;
     color: #FFFFFF;
 }
 
+.hover_list > ul {
+    list-style-type: none;
+}
+
+.hover_list > ul > li > a:hover {
+    background-color: rgb(1, 1, 33);
+    border-color: rgb(255, 255, 255);
+    border-width: 0px 0px 1px 0px;
+    border-style: solid;
+}
+
 .hover_list {
-    margin-top: 10px;
+    padding: 10px 5px 10px 5px;
+    margin: 10px 0px 10px 0px;
     list-style-type: none;
     position: absolute;
     display: none;
@@ -85,13 +87,16 @@ nav > div > a {
     width: 200px;
 }
 
-.hover_list > a {
+.hover_list > ul > li > a {
     text-decoration: none;
     color: #FFFFFF;
 }
 
-
-.hover_list > .active {
+.active {
+    color: #555555
+}
+/*  */
+.hover_list ul > li > .active {
     color: #555555
 }
 

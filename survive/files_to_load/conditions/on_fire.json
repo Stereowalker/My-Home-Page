@@ -1,6 +1,0 @@
-{
-    "condition": "survive:on_fire",
-    "temperature": 1.0,
-    "fireTimer": 2,
-    "operation": ">="
-}

@@ -1,6 +1,0 @@
-{
-    "condition": "survive:underwater",
-    "temperature": 1.0,
-    "depth": 2,
-    "operation": "water_>="
-}

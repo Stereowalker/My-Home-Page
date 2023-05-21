@@ -3,7 +3,6 @@
     padding: 0px;
 }
 
-
 body {
     color: rgb(50, 50, 50);
     font-family: 'Baskerville Old Face';
@@ -111,11 +110,19 @@ nav > div > a {
 
 /**Main Page*/
 .main {
-    font-size: 15px;
+    font-size: 16px;
     padding-top: 30px;
     padding-left: 30px;
     padding-right: 30px;
     font-weight: bolder;
+}
+
+
+article {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color:rgb(215,215,235);
+    padding: 0px 100px 0px 100px;
 }
 
 /*Code Blocks*/

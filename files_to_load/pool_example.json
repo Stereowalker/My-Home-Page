@@ -1,0 +1,11 @@
+{
+  "weight": 7,
+  "verifiers": [
+    {
+      "id": "minecraft:fishing_rod"
+    }
+  ],
+  "tiers": [
+    "tiered:example"
+  ]
+}

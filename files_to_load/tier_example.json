@@ -1,0 +1,43 @@
+{
+  "id": "tiered:example",
+  "weight": 3,
+  "reforge_experience_cost": 2,
+  "reforge_durability_cost": 2,
+  "reforge_item": "tiered:armorers_hammer",
+  "verifiers": [
+    {
+      "tag": "forge:helmets"
+    },
+    {
+      "tag": "forge:chestplates"
+    },
+    {
+      "tag": "forge:leggings"
+    },
+    {
+      "tag": "forge:boots"
+    },
+    {
+      "tag": "forge:shields"
+    }
+  ],
+  "style": {
+    "color": "dark_gray"
+  },
+  "attributes": [
+    {
+      "type": "generic.armor",
+      "modifier": {
+        "name": "tiered:dented",
+        "operation": "ADDITION",
+        "amount": -1
+      },
+      "optional_equipment_slots": [
+        "FEET",
+        "LEGS",
+        "CHEST",
+        "HEAD"
+      ]
+    }
+  ]
+}

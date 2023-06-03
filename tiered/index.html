@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Survive (Minecraft Mod)</title>
+    <link rel="shortcut icon" href="../Stereowalker.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../libraries/highlightjs/styles/felipec.min.css">
+    <link rel="stylesheet" href="../style.css" />
+    <script src="../libraries/highlightjs/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <img src="../Stereowalker.png" alt="Logo" width="25" height="25" />
+            </div>
+            <div>
+                <a href="../">Home</a>
+            </div>
+            <div id="mods">
+                <a>My Mods</a>
+                <div class="hover_list" id="mods_hover">
+                    <ul>
+                        <li><a href="../survive">Survive</a></li>
+                        <li><a class="active">Tiered</a></li>
+                        <li><a href="combat.html">C.O.M.B.A.T</a></li>
+                        <li><a href="burden-of-time.html">Burden Of Time</a></li>
+                        <li><a href="controller-support.html">Controller Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="games">
+                <a>Games</a>
+                <div class="hover_list" id="games_hover">
+                    <ul>
+                        <li><a href="motor-mash.html">Motor Mash</a></li>
+                        <li><a href="ludo-legends.html">Ludo Legends</a></li>
+                        <li><a href="two-twos.html">Two Twos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="main">
+        <article>
+            <h1>WHAT IS THIS PAGE FOR?</h1>
+            This intent of this page is to tack on information that can't be incuded in the main CurseForge/Modrinth page
+            <br></br>
+
+            <h1>WHERE CAN I DOWNLOAD THIS MOD?</h1>
+            <p>
+                On
+                <a href="https://www.curseforge.com/minecraft/mc-mods/tiered-forge">CurseForge</a>
+                or on
+                <a href="https://modrinth.com/mod/tiered">Modrinth</a>
+                . Anywhere else is illegally hosted and might contain viruses, so download with caution. Or don't download at all.
+            </p>
+            <br></br>
+
+            <h1>DATA PACKS</h1>
+            <span>
+                <p>
+                    This mod gets all of its operational data from datapacks. Before we start the tutorial, there are some things we need to cover. 
+                </p>
+                <p>
+                    <tab1>1), 
+                    <code class="language-plaintext"> [mod_id]:[item_name]</code> 
+                    refers to the item you want to edit. When using the 
+                    <code class="language-plaintext"> /give</code> 
+                    command, the first words before
+                    <code class="language-plaintext"> :</code> 
+                    refer to the 
+                    <code class="language-plaintext"> [mod_id]</code> 
+                    while the parts after it refer to the 
+                    <code class="language-plaintext"> [item_name]</code>. 
+                </p>
+                <p>
+                    <tab1>2), All files will be stored in 
+                    <code class="plaintext">data/[mod_id]/tiered_modifiers/...</code>
+                    . Keep that in mind when arranging your files as the mod won't read your file if you don't put it in the correct location
+                </p>
+                <p>
+                    <tab1>3), I will not be teaching you how to make a datapack, you'll have to learn that elsewhere. I'll just continue under the asumption that you know the bare minimum of how they work.
+                </p>
+                <p>Now that we've covered that, here's what you can modify</P>
+            </span>
+            <br>
+            <ul>
+                <li>
+                    <h2>Tiers</h2>
+                    <p><tab1>This is the core of the tiered mod. Every entry here is an affix that could go on your item.</p>
+                    <p>Here is a sample of the file. It's files are stored in <code class="plaintext">.../tiers/[tier_name].json</code></p>
+                    
+                    <div class="parent_cb"><pre><code class="json child_cb dynamic_file" id="tier_example.json"></code></pre></div>
+                
+                    <p>
+                        <tab1>Let's break down what each entry does
+                    </p>
+                    <p>1) <code class="plaintext">"id"</code></p>
+                    <p>
+                        <tab1>This is the associated id of the tier you want to add. This id is what you'll use in your lang file to set the name of this tier. This will be removed
+                        in a later update to this mod, so please keep that in mind
+                    </p>
+                    <p>2) <code class="plaintext">"weight"</code></p>
+                    <p>
+                        <tab1>This is the percieved weight of the tier. This mod uses a weighting system to ensure some tiers appear rarely and other more commonly. The larger
+                        this number, the more often it's bound to appear. You do need to take into account the weight of other tiers that can appear on an item. Using the
+                        fishing rod as an example, it has 3 tiers: Common, Lucky and Unlucky. The common one has a weight of 7, the lucky 1 and the unlucky 2. This means that the
+                        common tier will be picked 7/10 (sum of all tiers weights) times. This field becomes irrelivant when pools are involved.
+                    </p>
+                    <p>3) <code class="plaintext">"reforge_experience_cost"</code></p>
+                    <p>
+                        <tab1>This is how much experience in levels it would cost the player to remove this tier when reforging. 
+                    </p>
+                    <p>4) <code class="plaintext">"reforge_durability_cost"</code></p>
+                    <p>
+                        <tab1>This is how much durability is deducted from the reforging item when you attempt to reforge this item in an anvil.
+                    </p>
+                    <p>5) <code class="plaintext">"reforge_item"</code></p>
+                    <p>
+                        <tab1>This is the item required to remove this tier during a reforge in an anvil. When setting this, the specified item must have the ability to lose 
+                        durability. Any item in the game can be used as a reforging item but for convieneince sake, you could make it either 
+                        <code class="plaintext">"tiered:armorers_hammer"</code> obtainable from the armorer,
+                        <code class="plaintext">"tiered:toolsmiths_hammer"</code> obtainable from the toolsmith or
+                        <code class="plaintext">"tiered:weaponsmiths_hammer"</code> obtainable from the weaponsmith. 
+                        What you decide to set yours to is entirely up to you
+                    </p>
+                    <p>6) <code class="plaintext">"verifiers"</code> and <code class="plaintext">"exclusions"</code></p>
+                    <p>
+                        <tab1>This determines what items can and cannot get this specific tier. Verifiers decide what can and Exclusions decide what can't. There are two types
+                        we can use <code class="plaintext">"id"</code> and <code class="plaintext">"tag"</code>.
+                        "id" specifies what specific item while "tag" specifies tags. This field becomes irrelivant when pools are involved.
+                    </p>
+                    <p>7) <code class="plaintext">"style"</code></p>
+                    <p>
+                        <tab1>This simply determines the style which will be used for the name of the item. It can get a tad bit complicated, so I'll send you off to where This
+                        is explained in better detail <a href="https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Java_Edition">Minecraft Fandom</a>
+                    </p>
+                    <p>8) <code class="plaintext">"attributes"</code></p>
+                    <p>
+                        <tab1>Coming soon...
+                    </p>
+                </li>
+                <br>
+                <li>
+                    <h2>Pools</h2>
+                    <p>
+                        <tab1>This introduces a bit of complexity to tiers. When you introduce a pool, all tiers for that item are pulled from here, meaning that adding a tier
+                        the usual way will no longer contribute to the tiers an item will get when it's crafted or reforged.
+                    </p>
+                    <p>
+                        Here is a sample of the file. It's files are stored in <code class="plaintext">.../pools/[pool_name].json</code>
+                    </p>
+
+                    <div class="parent_cb"><pre><code class="json child_cb dynamic_file" id="pool_example.json"></code></pre></div>
+
+                    <p>
+                        <tab1>Let's break down what each entry does
+                    </p>
+                    <p>1) <code class="plaintext">"weight"</code></p>
+                    <p>
+                        <tab1>This is the percieved weight of the pool. This works like the weight of the tier
+                    </p>
+                    <p>2) <code class="plaintext">"verifiers"</code> and <code class="plaintext">"exclusions"</code></p>
+                    <p>
+                        <tab1>This determines what items can and cannot get this specific pool. This works exactly like the 
+                        <code class="plaintext">"verifiers"</code> and <code class="plaintext">"exclusions"</code>
+                        in your tier.
+                    </p>
+                    <p>3) <code class="plaintext">"tiers"</code></p>
+                    <p>
+                        <tab1>This contains a list of tiers your item will get if it rolls this pool. For now, you'll just add the <code class="plaintext">"id"</code> of your tier
+                        to add it to this pool. The weight of each tier in this list will still play a factor, so keep that in mind.
+                    </p>
+                </li>
+            </ul>
+        </article>
+    </section>
+    <footer>
+    </footer>
+    <script src="../resize_code_block.js"></script>
+    <script src="../replace_contents.js"></script>
+</body>
+</html>

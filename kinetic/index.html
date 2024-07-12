@@ -1,1 +1,338 @@
+﻿<!DOCTYPE html>
 
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Survive (Minecraft Mod)</title>
+    <link rel="shortcut icon" href="../Stereowalker.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../libraries/highlightjs/styles/felipec.min.css">
+    <link rel="stylesheet" href="../style.css" />
+    <script src="../libraries/highlightjs/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <img src="../Stereowalker.png" alt="Logo" width="25" height="25" />
+            </div>
+            <div>
+                <a href="../">Home</a>
+            </div>
+            <div id="mods">
+                <a>My Mods</a>
+                <div class="hover_list" id="mods_hover">
+                    <ul>
+                        <li><a class="active">Survive</a></li>
+                        <li><a href="../tiered">Tiered</a></li>
+                        <li><a href="combat.html">C.O.M.B.A.T</a></li>
+                        <li><a href="burden-of-time.html">Burden Of Time</a></li>
+                        <li><a href="controller-support.html">Controller Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="games">
+                <a>Games</a>
+                <div class="hover_list" id="games_hover">
+                    <ul>
+                        <li><a href="motor-mash.html">Motor Mash</a></li>
+                        <li><a href="ludo-legends.html">Ludo Legends</a></li>
+                        <li><a href="two-twos.html">Two Twos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="main">
+        <article>
+            <h1>WHAT IS THIS PAGE FOR?</h1>
+            This intent of this page is to tack on information that can't be incuded in the main CurseForge/Modrinth page or the ingame guide book
+            <br></br>
+
+            <h1>WHERE CAN I DOWNLOAD THIS MOD?</h1>
+            <p>
+                On
+                <a href="https://www.curseforge.com/minecraft/mc-mods/survive">CurseForge</a>
+                or on
+                <a href="https://modrinth.com/mod/survive">Modrinth</a>
+                . Anywhere else is illegally hosted and might contain viruses, so download with caution. Or don't download at all.
+            </p>
+            <br></br>
+
+            <h1>DATA PACKS</h1>
+            <span>
+                <p>
+                    This mod gets a lot of its operational data from datapacks. Before we start the tutorial, there are some things we need to cover. 
+                </p>
+                <p>
+                    <tab1>1), 
+                    <code class="language-plaintext"> [mod_id]:[item_name]</code> 
+                    refers to the item you want to edit. When using the 
+                    <code class="language-plaintext"> /give</code> 
+                    command, the first words before
+                    <code class="language-plaintext"> :</code> 
+                    refer to the 
+                    <code class="language-plaintext"> [mod_id]</code> 
+                    while the parts after it refer to the 
+                    <code class="language-plaintext"> [item_name]</code>. 
+                </p>
+                <p>
+                    <tab1>2), All files will be stored in 
+                    <code class="plaintext">data/[mod_id]/survive_modifiers/...</code>
+                    . Keep that in mind when arranging your files as the mod won't read your file if you don't put it in the correct location
+                </p>
+                <p>
+                    <tab1>3), I will not be teaching you how to make a datapack, you'll have to learn that elsewhere. I'll just continue under the asumption that you know the bare minimum of how they work.
+                </p>
+                <p>Now that we've covered that, here's what you can modify</P>
+            </span>
+            <br>
+            <ul>
+                <li>
+                    <h2>Armor data</h2>
+                    <p><tab1>There are 2 things that can be modified here, one thing being more complicated than the other and that is weight and temperature.</p>
+                    <p>Here is a sample of the file. It's files are stored in <code class="plaintext">.../armors/[item_name].json</code></p>
+                    
+                    <div class="parent_cb"><pre><code class="json child_cb dynamic_file" id="armor_example.json"></code></pre></div>
+                
+                    <p><tab1>I'll start with the less complicated one. The second field, <code class="json">"weight_modifier": 4.37</code> gives you control of the percieved weight of the armor peice. 
+                    The unit of measure is kg so if you naitively use pounds or anything else, convert your value to kilograms and input it here</p>
+                    <p>For the complicated part, we have temperature. This gives you control of how that armor peice will interact with the players temperature. Here, 
+                    you'll provide a list of conditions and the mod checks them and applies whatever is there in ascending order. In the above example, I provided 2 conditions 
+                    <code class="json">"condition": "survive:on_fire"</code>
+                    and
+                    <code class="json">"condition": "survive:default"</code>
+                    . The first one applies it's temperature value when the player is on fire making the player a lot hotter while the second will always set the players temperature relatively hot.
+                    If I had used the second one first, the first one will never trigger as the second one is always active. As for what these conditions are, 
+                    </p>
+                    <table>
+                        <tr>
+                            <th>Condition</th>
+                            <th>Description</th>
+                            <th>Parameters</th>
+                        </tr>
+                        <tr>
+                            <td class="t_cb">
+                                <div class="parent_cb">
+                                    <pre>
+                                        <code class="json child_cb dynamic_file" id="conditions/default.json"></code>
+                                    </pre>
+                                </div>
+                            </td>
+                            <td>The default condition. It will always apply it's temperature. Best used as the last condition</td>
+                            <td>
+                                <p><code class="json">"temperature": 1.1</code>. The temperature to be applied to the player</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="t_cb">
+                                <div class="parent_cb">
+                                    <pre>
+                                        <code class="json child_cb dynamic_file" id="conditions/underwater.json"></code>
+                                    </pre>
+                                </div>
+                            </td>
+                            <td>This checks how deep you are in water or any fluids tagged<p><code class="language-plaintext"> minecraft:water</code></td>
+                            <td>
+                                <p><code class="json">"temperature": 1.0</code>. The temperature to be applied to the player</p>
+                                <p><code class="json">"depth": 2</code>. How deep in blocks underwater the player has to be in order to apply this condition</p>
+                                <p><code class="json">"operation": "y_<"</code>. The operation to be performed on the depth. The operations are:</p>
+                                <p><tab1><code class="plaintext"> y_=</code> is your y coord equal to depth? </p>
+                                <p><tab1><code class="language-plaintext"> y_>=</code> is your y coord greater than or equal to depth? </p>
+                                <p><tab1><code class="language-plaintext"> y_<=</code> is your y coord less than or equal to depth? </p>
+                                <p><tab1><code class="language-plaintext"> y_></code> is your y coord greater than to depth? </p>
+                                <p><tab1><code class="language-plaintext"> y_<</code> is your y coord less than to depth? </p>
+                                <p><tab1><code class="language-plaintext"> water_=</code> is your distance underwater equal to depth? </p>
+                                <p><tab1><code class="language-plaintext"> water_>=</code> is your distance underwater greater than or equal to depth? </p>
+                                <p><tab1><code class="language-plaintext"> water_<=</code> is your distance underwater less than or equal to depth? </p>
+                                <p><tab1><code class="language-plaintext"> water_></code> is your distance underwater greater than to depth? </p>
+                                <p><tab1><code class="language-plaintext"> water_<</code> is your distance underwater less than to depth? </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="t_cb">
+                                <div class="parent_cb">
+                                    <pre>
+                                        <code class="json child_cb dynamic_file" id="conditions/on_fire.json"></code>
+                                    </pre>
+                                </div>
+                            </td>
+                            <td>This checks if you are on fire and how long you will be on fire for</td>
+                            <td>
+                                <p><code class="json">"temperature": 1.0</code>. The temperature to be applied to the player</p>
+                                <p><code class="json">"fireTimer": 2</code>. The amount of ticks remaining before the fire goes out</p>
+                                <p><code class="json">"operation": "y_<"</code>. The operation to be performed on the fireTimer. The operations are:</p>
+                                <p><tab1><code class="language-plaintext"> =</code> is your remaining fire time equal to fireTimer? </p>
+                                <p><tab1><code class="language-plaintext"> >=</code> is your remaining fire time greater than or equal to fireTimer? </p>
+                                <p><tab1><code class="language-plaintext"> <=</code> is your remaining fire time less than or equal to fireTimer? </p>
+                                <p><tab1><code class="language-plaintext"> ></code> is your remaining fire time greater than to fireTimer? </p>
+                                <p><tab1><code class="language-plaintext"> <</code> is your remaining fire time less than to fireTimer? </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="t_cb">
+                                <div class="parent_cb">
+                                    <pre>
+                                        <code class="json child_cb dynamic_file" id="conditions/biome.json"></code>
+                                    </pre>
+                                </div>
+                            </td>
+                            <td>This checks the biome you are currently in</td>
+                            <td>
+                                <p><code class="json">"temperature": 1.1</code>. The temperature to be applied to the player</p>
+                                <p><code class="json">"biome": "minecraft:plains"</code>. The biome the player has to be in for condition this to apply</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="t_cb">
+                                <div class="parent_cb">
+                                    <pre>
+                                        <code class="json child_cb dynamic_file" id="conditions/not_biome.json"></code>
+                                    </pre>
+                                </div>
+                            </td>
+                            <td>This checks to see if you are not in the specified biome</td>
+                            <td>
+                                <p><code class="json">"temperature": 1.1</code>. The temperature to be applied to the player</p>
+                                <p><code class="json">"biome": "minecraft:plains"</code>. The biome the player should not be in for condition this to apply</p>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+                <br>
+                <li>
+                    <h2>Biome data</h2>
+                    <p>
+                        <tab1>This manipulates how the current and nearby biomes interacts with the player. Here is a sample of the file. It's files are stored in <code class="plaintext">.../biomes/[biome_name].json</code>
+                    </p>
+
+                    <div class="parent_cb"><pre><code class="json child_cb dynamic_file" id="biome_example.json"></code></pre></div>
+
+                    <p>
+                        <tab1> There are 5 things that can be modified in your file
+                    </p>
+
+                    <p>1) <code class="plaintext">"temperature"</code></p>
+                    <p>
+                        <tab1>This controls how hot or cold the biome should be to the player. Setting this to a negative value will make the biome cold while a positive value will make it hot. Adjust this to your liking
+                    </p>
+                    <p>2) <code class="plaintext">"wetness_modifier"</code></p>
+                    <p>
+                        <tab1>This controls how cold you'll get when you're wet in that biome. In this mod, you get wet by staying in the rain or in water, the longer you do this, the stronger the
+                        temperature drop you recieve as a result and the longer it takes you to lose the wet status. This controls how strong the effect is on the player.
+                        <code class="json">"wetness_modifier": 0.5</code> halves the effect wetness has on how cold you get and
+                        <code class="json">"wetness_modifier": 2.0</code> doubles it.
+                        Setting this to a negative value makes you become hotter instead.
+                    </p>
+                    <p>3) <code class="plaintext">"sun_intensity"</code></p>
+                    <p>
+                        <tab1>This controls how hot the sun is in that biome, with it's effect at it's highest when the sun is at it's highest point. This also manipulates how cold nights get, with
+                        it's effect remaining static the entire night
+                        <code class="json">"sun_intensity": 0.5</code> halves the effect the sun has on how hot you get and
+                        <code class="json">"sun_intensity": 2.0</code> doubles it.
+                        Setting this to a negative value makes you become colder during the day and hotter at night.
+                    </p>
+                    <p>4) <code class="plaintext">"altitude_level_modifier"</code></p>
+                    <p>
+                        <tab1>This controls how hot or cold the biome the biome is at when you go above or below sea level (y = 64). There are values you can change here:
+                        <code class="json">"upper": 1.0</code> makes you colder as you go above 64. Setting it to
+                        <code class="json">"upper": 0.5</code> halves this effect and
+                        <code class="json">"upper": 2.0</code> doubles it.
+                        Negative values make you get hotter instead.
+                        <code class="json">"lower": 1.0</code> makes you hotter as you go below 64. Setting it to
+                        <code class="json">"lower": 0.5</code> halves this effect and
+                        <code class="json">"lower": 2.0</code> doubles it.
+                        Negative values make you get colder instead
+                    </p>
+                    <p>5) <code class="plaintext">"season_modifier"</code></p>
+                    <p>
+                        <tab1>This only really works if you have a supported season mod installed alongside Survive. There are 18 possible season states and whichever one is applied at a given time
+                        will depend entirely on your season mod of choice.
+                        <code class="json">"survive:winter_begin": -0.6</code> makes the begining of every winter relatively cold. Setting this to a positive value will instead make your winters hot.
+                        Here is a list of every possible season you can modify
+                    </p>
+                    <p><code class="json">"survive:winter_begin"</code> The begining of winter</p>
+                    <p><code class="json">"survive:winter_midst"</code> The middle of winter</p>
+                    <p><code class="json">"survive:winter_close"</code> The end of winter</p>
+                    <p><code class="json">"survive:spring_begin"</code> The begining of spring</p>
+                    <p><code class="json">"survive:spring_midst"</code> The middle of spring</p>
+                    <p><code class="json">"survive:spring_close"</code> The end of spring</p>
+                    <p><code class="json">"survive:summer_begin"</code> The begining of summer</p>
+                    <p><code class="json">"survive:summer_midst"</code> The middle of summer</p>
+                    <p><code class="json">"survive:summer_close"</code> The end of summer</p>
+                    <p><code class="json">"survive:autumn_begin"</code> The begining of autumn</p>
+                    <p><code class="json">"survive:autumn_midst"</code> The middle of autumn</p>
+                    <p><code class="json">"survive:autumn_close"</code> The end of autumn</p>
+                    <p><code class="json">"survive:dry_begin"</code> The begining of the dry season</p>
+                    <p><code class="json">"survive:dry_midst"</code> The middle of the dry season</p>
+                    <p><code class="json">"survive:dry_close"</code> The end of the dry season</p>
+                    <p><code class="json">"survive:wet_begin"</code> The begining of the wet season</p>
+                    <p><code class="json">"survive:wet_midst"</code> The middle of the wet season</p>
+                    <p><code class="json">"survive:wet_close"</code> The end of the wet season</p>
+                    </p>
+                </li>
+                <br>
+                <li>
+                    <h2>Block data</h2>
+                    <div class="parent_cb"><pre><code class="json child_cb dynamic_file" id="block_example.json"></code></pre></div>
+                </li>
+                <li>- Consumable data
+                <div class="parent_cb"><pre><code class="json child_cb">{
+    "temperature_modifiers": [
+        {
+            "condition": "survive:on_fire",
+    		"temperature": 4.05,
+    		"fireTimer": 1,
+    		"operation": ">"
+    	},
+    	{
+    	    "condition": "survive:default",
+    		"temperature": 2.7
+        }
+    ],
+    "weight_modifier": 4.37
+}
+</code></pre></div></li>
+                <li>- Entity data
+                <div class="parent_cb"><pre><code class="json child_cb">{
+    "temperature_modifiers": [
+        {
+            "condition": "survive:on_fire",
+    		"temperature": 4.05,
+    		"fireTimer": 1,
+    		"operation": ">"
+    	},
+    	{
+    	    "condition": "survive:default",
+    		"temperature": 2.7
+        }
+    ],
+    "weight_modifier": 4.37
+}
+</code></pre></div></li>
+                <li>- Fluid data
+                <div class="parent_cb"><pre><code class="json child_cb">{
+    "temperature_modifiers": [
+        {
+            "condition": "survive:on_fire",
+    		"temperature": 4.05,
+    		"fireTimer": 1,
+    		"operation": ">"
+    	},
+    	{
+    	    "condition": "survive:default",
+    		"temperature": 2.7
+        }
+    ],
+    "weight_modifier": 4.37
+}
+</code></pre></div></li>
+            </ul>
+        </article>
+    </section>
+    <footer>
+    </footer>
+    <script src="../resize_code_block.js"></script>
+    <script src="../replace_contents.js"></script>
+</body>
+</html>

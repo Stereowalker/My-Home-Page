@@ -2,14 +2,6 @@
 	"supporters": [
 		{
 			"uuid": "00000000-0000-0000-0000-000000000000", 
-			"name": "Eddiee Ethian Quiriz Loaiza",
-			"type": "diamond", 
-			"discordId": 0,
-			"showCape": true,
-			"cape": "custom2"
-		},
-		{
-			"uuid": "00000000-0000-0000-0000-000000000000", 
 			"name": "Sharky 8668",
 			"type": "diamond", 
 			"discordId": 546529275180875788,
@@ -18,9 +10,17 @@
 		},
 		{
 			"uuid": "00000000-0000-0000-0000-000000000000", 
-			"name": "Pelletstove",
+			"name": "Eddiee Ethian Quiriz Loaiza",
 			"type": "diamond", 
 			"discordId": 0,
+			"showCape": true,
+			"cape": "custom2"
+		},
+		{
+			"uuid": "00000000-0000-0000-0000-000000000000", 
+			"name": "Pelletstove",
+			"type": "diamond", 
+			"discordId": 566671754538385418,
 			"showCape": true,
 			"cape": "custom2"
 		},
@@ -68,7 +68,7 @@
 			"uuid": "622c4f37-ef07-4061-9375-8467c4759d1b", 
 			"name": "CodeHexIO",
 			"type": "self", 
-			"discordId": 0,
+			"discordId": 696582065159667813,
 			"showCape": true,
 			"cape": "custom3"
 		},

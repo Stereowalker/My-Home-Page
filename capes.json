@@ -2,6 +2,14 @@
 	"supporters": [
 		{
 			"uuid": "00000000-0000-0000-0000-000000000000", 
+			"name": "Inorigj",
+			"type": "diamond", 
+			"discordId": 0,
+			"showCape": true,
+			"cape": "custom2"
+		},
+		{
+			"uuid": "00000000-0000-0000-0000-000000000000", 
 			"name": "Sharky 8668",
 			"type": "diamond", 
 			"discordId": 546529275180875788,

@@ -280,7 +280,7 @@
                 </li>
                 <br>
                 <li>
-                    <h2 id "blockdata">Block data</h2>
+                    <h2 id="blockdata">Block data</h2>
                     <p>
                         <tab1>This manipulates how the blocks around the player affect their temperature. Here is a sample of the file. It's files are stored in <code class="plaintext">.../blocks/[block_name].json</code>
                     </p>
@@ -300,8 +300,8 @@
                     <p>
                         <tab1>This will override <code class="plaintext">"temperature_modifier"</code> if the blockstate meets the requirements you put in here. It's a bit complicated, but I'll guide you through how this works. 
                             First is the <code class="plaintext">"name"</code>, you need this to match the property you're trying to use. Our
-                            example is targeting snow, so <code class="plaintext">"layers"</code> is appropriate. Next is the <code class="plaintext">"type"</code> of property. there are 
-                            3 valid types. <code class="plaintext">"integer"</code>, <code class="plaintext">"enum"</code>, and <code class="plaintext">"boolean"</code>. Next are <code class="plaintext">"min"</code> and <code class="plaintext">"max"</code>,
+                            example is targeting snow, so <code class="plaintext">"layers"</code> is appropriate. Next is the <code class="plaintext">"type"</code> of property and there are 
+                            3 valid types: <code class="plaintext">"integer"</code> (numbers), <code class="plaintext">"enum"</code> (text), and <code class="plaintext">"boolean"</code> (true/false). Next are <code class="plaintext">"min"</code> and <code class="plaintext">"max"</code>,
                             They're only used if you have your <code class="plaintext">"type"</code> set to <code class="plaintext">"integer"</code>. These are the minimum and maximum possible values of that state and if they don't match what the game sees as
                             the maximum and minimum, this override will fail. I've used 1 as the minimum and 8 as the maximum as those are the values for snow. You can use a <a href ="https://minecraft.wiki/w/Debug_Stick">debug stick</a> to check the values. 
                             Lastly, we have <code class="plaintext">"values"</code> where you map every value of that state that you want to affect the player to a temperature. In our example, I've omited "1" as I would prefer it use the devault value for temperature.

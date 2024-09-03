@@ -274,25 +274,67 @@
                 <br>
                 <li>
                     <h2>Block data</h2>
+                    <p>
+                        <tab1>This manipulates how the blocks around the player affect their temperature. Here is a sample of the file. It's files are stored in <code class="plaintext">.../blocks/[block_name].json</code>
+                    </p>
                     <div class="parent_cb"><pre><code class="json child_cb dynamic_file" id="block_example.json"></code></pre></div>
+                    <p>
+                        <tab1> There are 3 things that can be modified in your file
+                    </p>
+                    <p>1) <code class="plaintext">"temperature_modifier"</code></p>
+                    <p>
+                        <tab1>This controls how hot or cold the block should be to the player. Setting this to a negative value will make the block cold while a positive value will make it hot. Adjust this to your liking
+                    </p>
+                    <p>2) <code class="plaintext">"range"</code></p>
+                    <p>
+                        <tab1>This controls how close the player needs to be to the block for it to affect them. The range is measured in blocks
+                    </p>
                 </li>
-                <li>- Consumable data
-                <div class="parent_cb"><pre><code class="json child_cb">{
-    "temperature_modifiers": [
-        {
-            "condition": "survive:on_fire",
-    		"temperature": 4.05,
-    		"fireTimer": 1,
-    		"operation": ">"
-    	},
-    	{
-    	    "condition": "survive:default",
-    		"temperature": 2.7
-        }
-    ],
-    "weight_modifier": 4.37
-}
-</code></pre></div></li>
+                <li>
+                    <h2>Consumable data</h2>
+                    <p>
+                        <tab1>This manipulates how consumables, items that you eat/drink will affect the player. Here is a sample of the file. Where it's stored is completely dependent on what you're modifing.
+                    </p>
+                    <p>
+                        For the items themselves, they're stored in <code class="plaintext">.../consumables/items/[item_name].json</code>, but if what you want to target is a potion, you'll need to store it in <code class="plaintext">.../consumables/potions/[potion_name].json</code>
+                    </p>
+                    <div class="parent_cb"><pre><code class="json child_cb dynamic_file" id="consumable_example.json"></code></pre></div>
+                    <p>
+                        <tab1> There are up to 11 things that can be modified in your file
+                    </p>
+                    <p>1) <code class="plaintext">"energy"</code></p>
+                    <p>
+                        <tab1> This the amount of long term energy that'll be restored upon consumption if the stamina module is enabled
+                    </p>
+                    <p>2) <code class="plaintext">"thirst_consumption"</code></p>
+                    <p>
+                        <tab1> This is a modifier used mainly by food items to deduct thirst from the player. The higher this is, the more thirst will be consumed and this cannot be lower than 0.01
+                    </p>
+                    <p>3) <code class="plaintext">"thirst"</code></p>
+                    <p>
+                        <tab1> This adds or removes thirst directly from the player. It will be ignored if <code class="plaintext">"thirst_consumption"</code> is present in your file
+                    </p>
+                    <p>4) <code class="plaintext">"hydration"</code></p>
+                    <p><tab1> This directly sets the hydration level of the player. Hydration controls how quickly the player loses water as time passes. Higher values means the player retains water longer.</p>
+                    <p>It will be ignored if <code class="plaintext">"thirst_consumption"</code> is present in your file</p>
+                    <p>5) <code class="plaintext">"thirst_chance"</code></p>
+                    <p><tab1> The odds that the player will get the thitst effect after consumption. The value should range between 0 and 1 where 0 means the player will never get the effect and 1 means the player</p>
+                    <p>always will</p>
+                    <p>6) <code class="plaintext">"lifespan"</code></p>
+                    <p><tab1> This is how long in ticks that the item will remain viable for consumption. After the aloted time, the food item will recieve the spoiled status. This does nothing if Food Spoiling is disabled</p>
+                    <p>7) <code class="plaintext">"ticks_fresh"</code></p>
+                    <p><tab1> Of the amount of time specified in <code class="plaintext">"lifespan"</code>, how long should the item be marked as Fresh. This does nothing if Food Spoiling is disabled</p>
+                    <p>8) <code class="plaintext">"nutrition"</code></p>
+                    <p><tab1> There are 3 things that can be changed in here <code class="plaintext">"carbohydrate_ratio"</code>, <code class="plaintext">"protein_ratio"</code>, and <code class="plaintext">"fat_ratio"</code></p>
+                    <p>the amount of a certain nutrient you get will be dependent on the other nutrients and the amount of food the item replenished. Carbohydrate in this example will be replesnished by half the food</p>
+                    <p>as the addition of all the amount of carbs (3) divided by the nutrients (3+2+1=6) is half. The same logic is applied to the other nutrients</p>
+                    <p>9) <code class="plaintext">"gives_chilled_effect"</code></p>
+                    <p><tab1> If this food item gives the chilled effect</p>
+                    <p>10) <code class="plaintext">"gives_heated_effect"</code></p>
+                    <p><tab1> If this food item gives the heated effect</p>
+                    <p>11) <code class="plaintext">"gives_energizing_effect"</code></p>
+                    <p><tab1> If this food item gives the energizing effect</p>
+                </li>
                 <li>- Entity data
                 <div class="parent_cb"><pre><code class="json child_cb">{
     "temperature_modifiers": [

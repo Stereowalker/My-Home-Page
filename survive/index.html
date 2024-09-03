@@ -45,6 +45,13 @@
     </header>
     <section class="main">
         <article>
+            <h1>BEFORE YOU CONTINUE</h1>
+            <p>
+                A bit of shameless promotion, but if you do in fact enjoy this mod and would like to support me, please purchase my game <a href = https://store.epicgames.com/en-US/p/carnage-chase-8445af>Carnage Chase</a> or join my <a href = https://patreon.com/stereowalker>Patreon</a>, preferably on the lowest tier.
+                Though I would prefer you get the game, if you could do both, I would highly appreciate it. You'd be helping me with rent and keeping the lights on
+            </p>
+            <br></br>
+
             <h1>WHAT IS THIS PAGE FOR?</h1>
             This intent of this page is to tack on information that can't be incuded in the main CurseForge/Modrinth page or the ingame guide book
             <br></br>
@@ -273,7 +280,7 @@
                 </li>
                 <br>
                 <li>
-                    <h2>Block data</h2>
+                    <h2 id "blockdata">Block data</h2>
                     <p>
                         <tab1>This manipulates how the blocks around the player affect their temperature. Here is a sample of the file. It's files are stored in <code class="plaintext">.../blocks/[block_name].json</code>
                     </p>
@@ -288,6 +295,16 @@
                     <p>2) <code class="plaintext">"range"</code></p>
                     <p>
                         <tab1>This controls how close the player needs to be to the block for it to affect them. The range is measured in blocks
+                    </p>
+                    <p>2) <code class="plaintext">"blockstate_property_overrides"</code></p>
+                    <p>
+                        <tab1>This will override <code class="plaintext">"temperature_modifier"</code> if the blockstate meets the requirements you put in here. It's a bit complicated, but I'll guide you through how this works. 
+                            First is the <code class="plaintext">"name"</code>, you need this to match the property you're trying to use. Our
+                            example is targeting snow, so <code class="plaintext">"layers"</code> is appropriate. Next is the <code class="plaintext">"type"</code> of property. there are 
+                            3 valid types. <code class="plaintext">"integer"</code>, <code class="plaintext">"enum"</code>, and <code class="plaintext">"boolean"</code>. Next are <code class="plaintext">"min"</code> and <code class="plaintext">"max"</code>,
+                            They're only used if you have your <code class="plaintext">"type"</code> set to <code class="plaintext">"integer"</code>. These are the minimum and maximum possible values of that state and if they don't match what the game sees as
+                            the maximum and minimum, this override will fail. I've used 1 as the minimum and 8 as the maximum as those are the values for snow. You can use a <a href ="https://minecraft.wiki/w/Debug_Stick">debug stick</a> to check the values. 
+                            Lastly, we have <code class="plaintext">"values"</code> where you map every value of that state that you want to affect the player to a temperature. In our example, I've omited "1" as I would prefer it use the devault value for temperature.
                     </p>
                 </li>
                 <li>
@@ -318,7 +335,7 @@
                     <p><tab1> This directly sets the hydration level of the player. Hydration controls how quickly the player loses water as time passes. Higher values means the player retains water longer.</p>
                     <p>It will be ignored if <code class="plaintext">"thirst_consumption"</code> is present in your file</p>
                     <p>5) <code class="plaintext">"thirst_chance"</code></p>
-                    <p><tab1> The odds that the player will get the thitst effect after consumption. The value should range between 0 and 1 where 0 means the player will never get the effect and 1 means the player</p>
+                    <p><tab1> The odds that the player will get the thirst effect after consumption. The value should range between 0 and 1 where 0 means the player will never get the effect and 1 means the player</p>
                     <p>always will</p>
                     <p>6) <code class="plaintext">"lifespan"</code></p>
                     <p><tab1> This is how long in ticks that the item will remain viable for consumption. After the aloted time, the food item will recieve the spoiled status. This does nothing if Food Spoiling is disabled</p>
@@ -335,40 +352,45 @@
                     <p>11) <code class="plaintext">"gives_energizing_effect"</code></p>
                     <p><tab1> If this food item gives the energizing effect</p>
                 </li>
-                <li>- Entity data
-                <div class="parent_cb"><pre><code class="json child_cb">{
-    "temperature_modifiers": [
-        {
-            "condition": "survive:on_fire",
-    		"temperature": 4.05,
-    		"fireTimer": 1,
-    		"operation": ">"
-    	},
-    	{
-    	    "condition": "survive:default",
-    		"temperature": 2.7
-        }
-    ],
-    "weight_modifier": 4.37
-}
-</code></pre></div></li>
-                <li>- Fluid data
-                <div class="parent_cb"><pre><code class="json child_cb">{
-    "temperature_modifiers": [
-        {
-            "condition": "survive:on_fire",
-    		"temperature": 4.05,
-    		"fireTimer": 1,
-    		"operation": ">"
-    	},
-    	{
-    	    "condition": "survive:default",
-    		"temperature": 2.7
-        }
-    ],
-    "weight_modifier": 4.37
-}
-</code></pre></div></li>
+                <li>
+                    <h2>Entity data</h2>
+                    <p>
+                        <tab1>This manipulates how entities around the player affect their temperature. Here is a sample of the file. It's files are stored in <code class="plaintext">.../entities/[entity_name].json</code>
+                    </p>
+                    <div class="parent_cb"><pre><code class="json child_cb dynamic_file" id="entity_example.json"></code></pre></div>
+                    <p>
+                        <tab1> There are 2 things that can be modified in your file
+                    </p>
+                    <p>1) <code class="plaintext">"temperature_modifier"</code></p>
+                    <p>
+                        <tab1>This controls how hot or cold the entity should be to the player. Setting this to a negative value will make the entity cold while a positive value will make it hot.
+                    </p>
+                    <p>2) <code class="plaintext">"range"</code></p>
+                    <p>
+                        <tab1>This controls how close the player needs to be to the entity for it to affect them. The range is measured in blocks
+                    </p>
+                </li>
+                <li>
+                    <h2>Fluid data</h2>
+                    <p>
+                        <tab1>This manipulates how fluids, when drunk via right clicking, affect the player. Here is a sample of the file. It's files are stored in <code class="plaintext">.../fluids/[fluid_name].json</code>
+                        If you're looking to alter how fluids affect the players temperature, go to <a href "#blockdata">block data</a>
+                    </p>
+                    <div class="parent_cb"><pre><code class="json child_cb dynamic_file" id="fluid_example.json"></code></pre></div>
+                    <p>
+                        <tab1> There are up to 3 things that can be modified in your file
+                    </p>
+                    <p>1) <code class="plaintext">"thirst"</code></p>
+                    <p>
+                        <tab1> This adds or removes thirst directly from the player. It will be ignored if <code class="plaintext">"thirst_consumption"</code> is present in your file
+                    </p>
+                    <p>2) <code class="plaintext">"hydration"</code></p>
+                    <p><tab1> This directly sets the hydration level of the player. Hydration controls how quickly the player loses water as time passes. Higher values means the player retains water longer.
+                    It will be ignored if <code class="plaintext">"thirst_consumption"</code> is present in your file</p>
+                    <p>3) <code class="plaintext">"thirst_chance"</code></p>
+                    <p><tab1> The odds that the player will get the thirst effect after consumption. The value should range between 0 and 1 where 0 means the player will never get the effect and 1 means the player 
+                        always will</p>
+                </li>
             </ul>
         </article>
     </section>

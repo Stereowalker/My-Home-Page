@@ -2,7 +2,7 @@
 	"supporters": [
 		{
 			"uuid": "00000000-0000-0000-0000-000000000000", 
-			"name": "Jon Garland",
+			"name": "Frostyboi",
 			"type": "obsidian", 
 			"discordId": 0,
 			"showCape": true,
@@ -10,8 +10,8 @@
 		},
 		{
 			"uuid": "00000000-0000-0000-0000-000000000000", 
-			"name": "Odira Madumere",
-			"type": "obsidian", 
+			"name": "Angela Craig",
+			"type": "diamond", 
 			"discordId": 0,
 			"showCape": true,
 			"cape": "custom2"
@@ -37,6 +37,22 @@
 			"name": "Pelletstove",
 			"type": "diamond", 
 			"discordId": 566671754538385418,
+			"showCape": true,
+			"cape": "custom2"
+		},
+		{
+			"uuid": "00000000-0000-0000-0000-000000000000", 
+			"name": "Jon Garland",
+			"type": "older", 
+			"discordId": 0,
+			"showCape": true,
+			"cape": "custom2"
+		},
+		{
+			"uuid": "00000000-0000-0000-0000-000000000000", 
+			"name": "Odira Madumere",
+			"type": "older", 
+			"discordId": 0,
 			"showCape": true,
 			"cape": "custom2"
 		},
